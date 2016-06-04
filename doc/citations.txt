@@ -1,0 +1,4 @@
+Volcanic eruption database: http://www.ngdc.noaa.gov/nndc/struts/form?t=102557&s=50&d=50
+Earthquake database: https://www.ngdc.noaa.gov/nndc/struts/form?t=101650&s=1&d=1
+
+Hazard Map Viewer: http://maps.ngdc.noaa.gov/viewers/hazards/

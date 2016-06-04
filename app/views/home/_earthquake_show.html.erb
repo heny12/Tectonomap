@@ -1,0 +1,19 @@
+<h2>Earthquake <%= usgs_id(earthquake["usgs_id"]) %></h2>
+<p>
+  <%= location(earthquake["location"],earthquake["country"]) %>
+</p>
+<p>
+  <%= latlng(earthquake["latitude"],earthquake["longitude"]) %>
+</p>
+<p>
+  <%= time(earthquake["minute"],earthquake["hour"]) %>
+</p>
+<p>
+  <%= date(earthquake["day"],earthquake["month"],earthquake["year"]) %>
+</p>
+<p>
+  <%= magnitude(earthquake["eq_primary"]) %>
+</p>
+<p>
+  <%= depth(earthquake["focal_depth"]) %>
+</p>

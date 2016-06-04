@@ -1,0 +1,19 @@
+<h2>Eruption <%= eruptionName(eruption["name"]) %></h2>
+<p>
+  <%= location(eruption["location"],eruption["country"]) %>
+</p>
+<p>
+  <%= latlng(eruption["latitude"],eruption["longitude"]) %>
+</p>
+<p>
+  <%= date(eruption["day"],eruption["month"],eruption["year"]) %>
+</p>
+<p>
+  <%= vei(eruption["vei"]) %>
+</p>
+<p>
+  <%= volcano(eruption["eruption_type"]) %>
+</p>
+<p>
+  <%= elevation(eruption["elevation"]) %>
+</p>

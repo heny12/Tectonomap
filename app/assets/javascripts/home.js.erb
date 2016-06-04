@@ -1,0 +1,274 @@
+$(document).ready(function() {
+
+  var EARTHQUAKES = [];
+  var ERUPTIONS = [];
+  var DATE_HI = new Date();
+  var DATE_LO = new Date(-4500,0,1);
+  var TIMEOUT;
+
+///////////////////////////////////////////////////////////////////////////////////////////////////
+// Initialize map
+///////////////////////////////////////////////////////////////////////////////////////////////////
+
+  var mapDiv = document.getElementById('map');
+  var map = new google.maps.Map(mapDiv, {
+    center: {lat: 47.540, lng: -120.546},
+    mapTypeId: google.maps.MapTypeId.HYBRID,
+    disableDefaultUI: true,  // dont display the google map ui things, they just get in the way
+    zoom: 6
+  });
+
+  var infowindow = new google.maps.InfoWindow({});
+
+  draw_earthquakes(gon.earthquakes);
+  draw_eruptions(gon.eruptions);
+
+///////////////////////////////////////////////////////////////////////////////////////////////////
+// Draw data points on to map
+///////////////////////////////////////////////////////////////////////////////////////////////////
+
+  function draw_eruptions(eruptions) {
+    for(i in eruptions){
+      addEruption(eruptions[i])
+    }
+  }
+  // Adds a circle marker to the google map with attributes based on its data
+  function addEarthquake(earthquake) {
+    var earthquakeCircle = new google.maps.Circle({
+      class: 'marker earthquake',
+      strokeColor: '#222222',
+      zIndex: 15-earthquake.eq_primary,
+      strokeOpacity: 0.7,
+      strokeWeight: 0.4,
+      fillColor: '#ff0000',
+      fillOpacity: 0.6,
+      map: map,
+      center: new google.maps.LatLng(earthquake.latitude, earthquake.longitude),
+      radius: EarthquakeLogSlider(earthquake.eq_primary),
+      data: {id:earthquake.id,year:earthquake.year}
+    });
+    // Adds a listener that will show an info window for the marker when clicked
+    earthquakeCircle.addListener('click', function(event) {
+      $.ajax({
+        type: 'GET',
+        url: '/home/earthquake_data',
+        data: {id: earthquake.id},
+        success: (function(data) {
+          infowindow.setContent(data);
+          infowindow.setPosition(event.latLng);
+          infowindow.open(map, earthquakeCircle);
+        }) // TODO failure
+      });
+    });
+    // When we hover over a marker, lets make it more opaque
+    earthquakeCircle.addListener('mouseover', function(event) {
+      this.setOptions({fillOpacity: 0.9});
+    });
+    // return the marker to normal opacity when we are no longer hovering over it
+    earthquakeCircle.addListener('mouseout', function(event) {
+      this.setOptions({fillOpacity: 0.7});
+    });
+    EARTHQUAKES.push(earthquakeCircle);
+  }
+
+  function draw_earthquakes(earthquakes) {
+    for(i in earthquakes){
+      addEarthquake(earthquakes[i])
+    }
+  }
+  // Adds a circle marker to the google map with attributes based on its data
+  function addEruption(eruption) {
+    var eruptionCircle = new google.maps.Circle({
+      class: 'marker eruption',
+      zIndex: 11-eruption.vei,
+      strokeColor: '#222222',
+      strokeOpacity: 0.7,
+      strokeWeight: 0.5,
+      fillColor: '#fdff14',
+      fillOpacity: 0.6,
+      map: map,
+      center: new google.maps.LatLng(eruption.latitude, eruption.longitude),
+      radius: EruptionLogSlider(eruption.vei),
+      data: {id:eruption.id,year:eruption.year}
+    });
+    // Adds a listener that will show an info window for the marker when clicked
+    eruptionCircle.addListener('click', function(event) {
+      $.ajax({
+        type: 'GET',
+        url: '/home/eruption_data',
+        data: {id: eruption.id},
+        success: (function(data) {
+          infowindow.setContent(data);
+          infowindow.setPosition(event.latLng);
+          infowindow.open(map, eruptionCircle);
+        }) // TODO add failure
+      });
+
+    });
+    // When we hover over a marker, lets make it more opaque
+    eruptionCircle.addListener('mouseover', function(event) {
+      this.setOptions({fillOpacity: 0.9});
+    });
+    // return the marker to normal opacity when we are no longer hovering over it
+    eruptionCircle.addListener('mouseout', function(event) {
+      this.setOptions({fillOpacity: 0.7});
+    });
+    ERUPTIONS.push(eruptionCircle);
+  }
+
+  // Add our KML boundaries
+  var kmzLayer = new google.maps.KmlLayer({
+    // this layer is probably meant for google earth and displays wierd horizontal bars, TODO - fix or find better layer
+    url: 'plate-boundaries.kmz',
+    map: map,
+    preserveViewport: false,
+    suppressInfoWindows: false
+  });
+
+
+///////////////////////////////////////////////////////////////////////////////////////////////////
+// Date Slider
+///////////////////////////////////////////////////////////////////////////////////////////////////
+
+// TODO change to this: http://ionden.com/a/plugins/ion.rangeSlider/demo_interactions.html
+
+$("#slider").dateRangeSlider({
+
+  bounds:{
+    min: DATE_LO,
+    max: DATE_HI
+  },
+  defaultValues:{
+    min: DATE_LO,
+    max: DATE_HI
+  },
+  arrows: false,
+  formatter: function(val){
+    var days = val.getDate(),
+    month = val.getMonth() + 1,
+    year = val.getFullYear();
+    return year;                    // TODO maybe show full date
+  },
+  step: {years:1},
+  wheelMode: false
+});
+
+$("#slider").bind("valuesChanging", function(e, data){
+  DATE_LO = data.values.min;
+  DATE_HI = data.values.max;
+  clearTimeout(TIMEOUT);
+  TIMEOUT = setTimeout(function(){adjustMarkers()}, 1500);
+});
+
+function adjustMarkers(){
+  var year_lo = DATE_LO.getFullYear();
+  var year_hi = DATE_HI.getFullYear();
+  adjustEruptions(year_lo,year_hi);
+  adjustEarthquakes(year_lo,year_hi);
+}
+
+function adjustEruptions(year_lo,year_hi){
+  for(i in ERUPTIONS){
+    eruption = ERUPTIONS[i];
+    if(year_lo > eruption.data.year || eruption.data.year > year_hi){
+      eruption.setVisible(false);
+    }else{
+      eruption.setVisible(true);
+    }
+  }
+}
+
+function adjustEarthquakes(year_lo,year_hi){
+  for(i in EARTHQUAKES){
+    earthquake = EARTHQUAKES[i];
+    if(year_lo > earthquake.data.year || earthquake.data.year > year_hi){
+      earthquake.setVisible(false);
+    }else{
+      earthquake.setVisible(true);
+    }
+  }
+}
+
+///////////////////////////////////////////////////////////////////////////////////////////////////
+// Helper functions
+///////////////////////////////////////////////////////////////////////////////////////////////////
+
+  function EruptionLogSlider(position) {
+    if(position == null){
+      position = 0;
+    }
+
+    // position will be between 0 and 100
+    var minp = 0;
+    var maxp = 8;
+
+    // The result should be between 100 an 10000000
+    var minv = Math.log(5000);
+    var maxv = Math.log(400000);
+
+    // calculate adjustment factor
+    var scale = (maxv-minv) / (maxp-minp);
+
+    return Math.exp(minv + scale*(position-minp));
+  }
+
+  function EarthquakeLogSlider(position) {
+    if(position == null){
+      position = 0;
+    }
+
+    // position will be between 0 and 100
+    var minp = 0;
+    var maxp = 13;
+
+    // The result should be between 100 an 10000000
+    var minv = Math.log(10000);
+    var maxv = Math.log(100000);
+
+    // calculate adjustment factor
+    var scale = (maxv-minv) / (maxp-minp);
+
+    return Math.exp(minv + scale*(position-minp));
+  }
+
+
+
+
+
+
+///////////////////////////////////////////////////////////////////////////////////////////////////
+// Depricated for now
+///////////////////////////////////////////////////////////////////////////////////////////////////
+
+    // var markers = [];
+    // google.maps.event.addListener(map, 'idle', showMarkers);
+    //
+    // function showMarkers() {
+    //   var bounds = map.getBounds();
+    //   var ne = bounds.getNorthEast(); // LatLng of the north-east corner
+    //   var sw = bounds.getSouthWest(); // LatLng of the south-west corder
+    //   lat_hi = ne.lat();
+    //   lat_lo = sw.lat();
+    //   long_hi = ne.lng();
+    //   long_lo = sw.lng();
+    //
+    //   $.ajax({
+    //     type: 'POST',
+    //     url: '/home/set_markers',
+    //     data: {lat_hi: lat_hi, lat_lo: lat_lo, long_lo: long_lo, long_hi: long_hi}
+    //   });
+    //
+    //   console.log(markers.length);
+    //
+    //   for (var i = 0; i < markers.length; i++) {
+    //
+    //       markers[i].setMap(null);
+    //   }
+    //
+    //   // var eruptions = gon.eruptions;
+    //   // var earthquakes = gon.earthquakes;
+    //   draw_eruptions(gon.eruptions);
+    //   draw_earthquakes(gon.earthquakes);
+    // }
+
+});

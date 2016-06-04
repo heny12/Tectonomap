@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+  <title>Tectonomap</title>
+
+  <%= include_gon %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+
+  <meta name="viewport" content="initial-scale=1.0, user-scalable=no"/>
+  <link rel="icon" type="image/png" href="favicon.ico" />
+
+
+</head>
+<body>
+
+<%= yield %>
+
+</body>
+</html>
