@@ -142,8 +142,8 @@ Year	Month	Day	TSU	EQ	Name	Location	Country	Latitude	Longitude	Elevation	Type	St
 1693	2	13	TSU		Hekla	Iceland-S	Iceland	63.98	-19.7	1491	Stratovolcano	Historical	D1	4																					
 1694	11	20			Banda Api	Banda Sea	Pacific Ocean	-4.525	129.871	640	Caldera	Historical	D1	3			2										2								
 1698	5		TSU		Vesuvius	Italy	Italy	40.821	14.426	1281	Complex volcano	Historical	D2	3																					
-1698					Cotopaxi	Ecuador	Ecuador	-.677	-78.436	5911	Stratovolcano	Historical	D2	3	M		2										2								
 1698					Cereme	Java	Indonesia	-6.892	108.4	3078	Stratovolcano	Historical	D2	3			1										1								
+1698					Cotopaxi	Ecuador	Ecuador	-.677	-78.436	5911	Stratovolcano	Historical	D2	3	M		2										2								
 1706	5	5	TSU		Tenerife	Canary Is	Spain	28.271	-16.641	3715	Stratovolcano	Historical	D2	2									3										3		
 1707	5		TSU		Santorini	Greece	Greece	36.404	25.396	329	Shield volcano	Historical	D2																						
 1707	12	16		EQ	Fuji	Honshu-Japan	Japan	35.35	138.73	3776	Stratovolcano	Historical	D4	4			1						1	75	1		1						1	75	1
@@ -216,7 +216,7 @@ Year	Month	Day	TSU	EQ	Name	Location	Country	Latitude	Longitude	Elevation	Type	St
 1812	4	27			Soufriere St. Vincent	W Indies	St. Vincent & the Grenadines	13.33	-61.18	1220	Stratovolcano	Historical	D1	4	T, m	56	2									56	2								
 1812	8	6			Awu	Sangihe Is-Indonesia	Indonesia	3.67	125.5	1320	Stratovolcano	Historical	D1	3	P,M	953	3									953	3								
 1814	2	1			Mayon	Luzon-Philippines	Philippines	13.257	123.685	2462	Stratovolcano	Historical	D1	4	P,M,E	1200	4								3	1200	4								3
-1815	4	5	TSU		Tambora	Lesser Sunda Is	Indonesia	-8.25	118	2850	Stratovolcano	Historical	D1	7	P,W	10000	4				4		4		4	117000	4				4		4		4
+1815	4	10	TSU		Tambora	Lesser Sunda Is	Indonesia	-8.25	118	2850	Stratovolcano	Historical	D1	7	P,W,A,I	11000	4				4		4		4	60000	4				4		4		4
 1816	7	5			Aso	Kyushu-Japan	Japan	32.88	131.1	1592	Caldera	Historical	D1	2	T	1	1									1	1								
 1817	1	24			Ijen	Java	Indonesia	-8.058	114.242	2799	Stratovolcano	Historical	D1	2	M		2							90	2		2							90	2
 1817					Raung	Java	Indonesia	-8.125	114.042	3332	Stratovolcano	Historical	D1	4			1										1								
@@ -230,8 +230,8 @@ Year	Month	Day	TSU	EQ	Name	Location	Country	Latitude	Longitude	Elevation	Type	St
 1823	2				Kilauea	Hawaiian Is	United States	19.425	-155.292	1222	Shield volcano	Historical	D1	0	L		1										1								
 1824					Shishaldin	Aleutian Is	United States	54.75	-163.97	2857	Stratovolcano	Historical	D1	3																					
 1825					Balbi	Bougainville-SW Paci	Papua New Guinea	-5.83	154.98	2715	Stratovolcano	Holocene	U		P		3										3								
-1826	10	11			Dieng Volc Complex	Java	Indonesia	-7.2	109.92	2565	Complex volcano	Historical	D1	2			2										2								
 1826	10	11			Kelut	Java	Indonesia	-7.93	112.308	1731	Stratovolcano	Historical	D1	3	M		1			65	2		3		3		1			65	2		3		3
+1826	10	11			Dieng Volc Complex	Java	Indonesia	-7.2	109.92	2565	Complex volcano	Historical	D1	2			2										2								
 1826	10				Aso	Kyushu-Japan	Japan	32.88	131.1	1592	Caldera	Historical	D1	2	T		3										3								
 1827	6	27	TSU	EQ	Avachinsky	Kamchatka	Russia	53.255	158.83	2741	Stratovolcano	Historical	D1	2																					
 1827	8	9			Avachinsky	Kamchatka	Russia	53.255	158.83	2741	Stratovolcano	Historical	D1	2																					
@@ -274,6 +274,8 @@ Year	Month	Day	TSU	EQ	Name	Location	Country	Latitude	Longitude	Elevation	Type	St
 1856	9	25			Komaga-take	Hokkaido-Japan	Japan	42.07	140.68	1140	Stratovolcano	Historical	D1	4	P	20	1								3	20	1								3
 1857	4	17	TSU	EQ	Umboi	New Guinea-NE of	Papua New Guinea	-5.589	147.875	1548	Complex volcano	Holocene	U																						
 1858	1				Mayon	Luzon-Philippines	Philippines	13.257	123.685	2462	Stratovolcano	Historical	D1	2	P		1										1								
+1858	4	23			Tate-yama	Honshu-Japan	Japan	36.57	137.6	2621	Stratovolcano	Historical	D3		m		3										3								
+1858	7	3			Tate-yama	Honshu-Japan	Japan	36.57	137.6	2621	Stratovolcano	Historical	D3		m		3										3								
 1860	4				Semeru	Java	Indonesia	-8.108	112.92	3676	Stratovolcano	Historical	D1	2									1												1
 1860	8	18			Fuego	Guatemala	Guatemala	14.473	-90.88	3763	Stratovolcano	Historical	D1	2									1										1		
 1861	5	7			Dubbi	Africa-NE	Eritrea	13.58	41.808	1625	Stratovolcano	Historical	D3	3		106	3						3		3	106	3						3		3
@@ -292,7 +294,7 @@ Year	Month	Day	TSU	EQ	Name	Location	Country	Latitude	Longitude	Elevation	Type	St
 1870					Iliwerung	Lesser Sunda Is	Indonesia	-8.54	123.59	1018	Complex volcano	Historical	D1	3			1										1								
 1870					Aoba	Vanuatu-SW Pacific	Vanuatu	-15.4	167.83	1496	Shield volcano	Historical	D1	2	M		3						3		3		3						3		3
 1871	3	3	TSU		Ruang	Sangihe Is-Indonesia	Indonesia	2.28	125.425	725	Stratovolcano	Historical	D2	2	W								1		1	400	3						2	75	2
-1871	4	30	TSU	EQ	Hibok-Hibok	Mindanao-Philippines	Philippines	9.203	124.673	1332	Stratovolcano	Historical	D2	2			1						3		3		1						3		3
+1871	4	30	TSU	EQ	Camiguin	Mindanao-Philippines	Philippines	9.203	124.673	1332	Stratovolcano	Historical	D2	2			1						3		3		1						3		3
 1871	8	7			Gamalama	Halmahera-Indonesia	Indonesia	.8	127.325	1715	Stratovolcano	Historical	D1	2	T	1	1			1	1					1	1			1	1				
 1871	12	8			Mayon	Luzon-Philippines	Philippines	13.257	123.685	2462	Stratovolcano	Historical	D1	3	P	3	1									3	1								
 1872	4	15			Merapi	Java	Indonesia	-7.542	110.442	2947	Stratovolcano	Historical	D1	4	T	30	1				1			50	1	30	1				1			50	1
@@ -307,6 +309,7 @@ Year	Month	Day	TSU	EQ	Name	Location	Country	Latitude	Longitude	Elevation	Type	St
 1874	7	19			Taal	Luzon-Philippines	Philippines	14.002	120.993	400	Stratovolcano	Historical	D1	2			1										1								
 1875	1	29			Kelut	Java	Indonesia	-7.93	112.308	1731	Stratovolcano	Historical	D1	0	m		1						2		2		1						2		2
 1875	3	29			Askja	Iceland-NE	Iceland	65.03	-16.75	1516	Stratovolcano	Historical	D2	5									1										1		
+1875					Mayon	Luzon-Philippines	Philippines	13.257	123.685	2462	Stratovolcano	Historical	D1		m	1500	4									1500	4								
 1877	2	14	TSU	EQ	Mauna Loa	Hawaiian Is	United States	19.475	-155.608	4170	Shield volcano	Historical	D1	0																					
 1877	6	25			Cotopaxi	Ecuador	Ecuador	-.677	-78.436	5911	Stratovolcano	Historical	D2	4	M	340	3									340	3								
 1878	1	10	TSU		Yasur	Vanuatu-SW Pacific	Vanuatu	-19.52	169.425	361	Stratovolcano	Historical	D1	3																			1		
@@ -380,6 +383,7 @@ Year	Month	Day	TSU	EQ	Name	Location	Country	Latitude	Longitude	Elevation	Type	St
 1912	9	6			Novarupta	Alaska Peninsula	United States	58.27	-155.16	841	Caldera	Historical	D2	6	T	2	1									2	1								
 1912	12	3			Nyamuragira	Africa-C	Congo, DRC	-1.408	29.2	3058	Shield volcano	Historical	D1	3	L	20	1									20	1								
 1913	3	14	TSU	EQ	Awu	Sangihe Is-Indonesia	Indonesia	3.67	125.5	1320	Stratovolcano	Historical	D1	2												138	3				2		2		3
+1913	5	29			Asama	Honshu-Japan	Japan	36.4	138.53	2560	Complex volcano	Historical	D1	1	T	1										1	1								
 1913	6	23			Semeru	Java	Indonesia	-8.108	112.92	3676	Stratovolcano	Historical	D1	2									1										1		
 1913	12	6			Ambrym	Vanuatu-SW Pacific	Vanuatu	-16.25	168.12	1334	Pyroclastic shield	Historical	D1	3	T	21	1						3			21	1						3		
 1914	1	12	TSU	EQ	Sakura-jima	Kyushu-Japan	Japan	31.58	130.67	1117	Stratovolcano	Historical	D1	4	I,S,A,T	28	1				3	.04	1	2148	3	63	2			112	3	19	3	2268	3
@@ -398,9 +402,11 @@ Year	Month	Day	TSU	EQ	Name	Location	Country	Latitude	Longitude	Elevation	Type	St
 1919	4	3	TSU		Banua Wuhu	Sangihe Is-Indonesia	Indonesia	3.138	125.491	-5	Submarine volcano	Historical	D2										1										1		
 1919	5	19			Kelut	Java	Indonesia	-7.93	112.308	1731	Stratovolcano	Historical	D1	4	M	5110	4							9000	3	5110	4							9000	3
 1919	5	22	TSU		Stromboli	Italy	Italy	38.789	15.213	926	Stratovolcano	Historical	D1	3	T	4	1				3			10	1	4	1				3			10	1
+1919	7	6			Nasu	Honshu-Japan	Japan	37.12	139.97	1917	Stratovolcano	Historical	D2		G	2	1									2	1								
 1919	9	29	TSU		Mauna Loa	Hawaiian Is	United States	19.475	-155.608	4170	Shield volcano	Historical	D1	0																					
 1920	7	25			Merapi	Java	Indonesia	-7.542	110.442	2947	Stratovolcano	Historical	D1	3	P	33	1									33	1								
 1920	10	29			Izalco	El Salvador	El Salvador	13.813	-89.633	1950	Stratovolcano	Historical	D1	3	P		1										1								
+1921	11	26			Nasu	Honshu-Japan	Japan	37.12	139.97	1917	Stratovolcano	Historical	D2		G	1	1									1	1								
 1923	3	11			Papandayan	Java	Indonesia	-7.32	107.73	2665	Stratovolcano	Historical	D2	1	G	1	1									1	1								
 1923	6				Tangkubanparahu	Java	Indonesia	-6.77	107.6	2084	Stratovolcano	Historical	D1		G	3	1									3	1								
 1923	7	1			Kirishima	Kyushu-Japan	Japan	31.93	130.87	1700	Shield volcano	Historical	D1	2		1	1									1	1								
@@ -427,13 +433,16 @@ Year	Month	Day	TSU	EQ	Name	Location	Country	Latitude	Longitude	Elevation	Type	St
 1932	2				Merapi	Java	Indonesia	-7.542	110.442	2947	Stratovolcano	Historical	D1		m		1										1								
 1932	10	1			Kusatsu-Shirane	Honshu-Japan	Japan	36.62	138.55	2176	Stratovolcano	Historical	D1	3	M	2	1			7	1					2	1			7	1				
 1933	1	8	TSU	EQ	Kharimkotan	Kuril Is	Russia	49.12	154.508	1145	Stratovolcano	Historical	D2	3	W											2	1								
+1933	5	10			Hakone	Honshu-Japan	Japan	35.22	139.02	1438	Complex volcano	Radiocarbon	D7		G	1	1									1	1								
 1933	12	24			Kuchinoerabu-jima	Ryukyu Is	Japan	30.43	130.22	649	Stratovolcano	Historical	D1	4	T	8	1			26	1					8	1			26	1				
 1933	12	25	TSU		Bulusan	Luzon-Philippines	Philippines	12.77	124.05	1565	Stratovolcano	Historical	D1	2												9	1						3		
 1936	2				Asama	Honshu-Japan	Japan	36.4	138.53	2560	Complex volcano	Historical	D1	3	P,T	2	1									2	1								
 1937	2	9			Llaima	Chile-C	Chile	-38.692	-71.729	3125	Stratovolcano	Historical	D1	2	F	3	1									3	1								
 1937	5	29	TSU	EQ	Rabaul	New Britain-SW Pac	Papua New Guinea	-4.271	152.203	688	Pyroclastic shield	Historical	D1	4	P,T,W,I	507	3						1		1	507	3						1		1
 1938	1	28	TSU		Nyamuragira	Africa-C	Congo, DRC	-1.408	29.2	3058	Shield volcano	Historical	D1	1									1										1		
+1938	5	9			Bandai	Honshu-Japan	Japan	37.6	140.08	1819	Stratovolcano	Historical	D3		m	2	1									2	1								
 1938	6	5			Mayon	Luzon-Philippines	Philippines	13.257	123.685	2462	Stratovolcano	Historical	D1	2			1										1								
+1938	7	16			Asama	Honshu-Japan	Japan	36.4	138.53	2560	Complex volcano	Historical	D1	1	T		1										1								
 1939	8	17			Tori-shima	Izu Is-Japan	Japan	30.48	140.32	403	Stratovolcano	Historical	D1	2		2	1									2	1								
 1939	10	13			Dieng Volc Complex	Java	Indonesia	-7.2	109.92	2565	Complex volcano	Historical	D1	1	T	10	1						1			10	1						1		
 1940	6	20			Karangetang [Api Siau]	Sangihe Is-Indonesia	Indonesia	2.78	125.48	1784	Stratovolcano	Historical	D1	2		1	1			2	1					1	1			2	1				
@@ -453,17 +462,22 @@ Year	Month	Day	TSU	EQ	Name	Location	Country	Latitude	Longitude	Elevation	Type	St
 1946	10	29			Semeru	Java	Indonesia	-8.108	112.92	3676	Stratovolcano	Historical	D1	2									1										1		
 1947	1	7			Mayon	Luzon-Philippines	Philippines	13.257	123.685	2462	Stratovolcano	Historical	D1	2			1										1								
 1947	7	6			Asama	Honshu-Japan	Japan	36.4	138.53	2560	Complex volcano	Historical	D1	2		11	1									11	1								
+1947	9	16			Akagi	Honshu-Japan	Japan	36.53	139.18	1828	Stratovolcano	Historical	D6		m	699	3									699	3								
 1947	11	2			Hekla	Iceland-S	Iceland	63.98	-19.7	1491	Stratovolcano	Historical	D1	4	L	1	1									1	1								
 1948	4	7			Iliwerung	Lesser Sunda Is	Indonesia	-8.54	123.59	1018	Complex volcano	Historical	D1	2									2										2		
-1948	9	1			Hibok-Hibok	Mindanao-Philippines	Philippines	9.203	124.673	1332	Stratovolcano	Historical	D2	3	P	68	2									68	2								
 1949	1	1			Villarrica	Chile-C	Chile	-39.42	-71.93	2847	Stratovolcano	Historical	D1	3	M	54	2						2			54	2						2		
 1949	5	26			Purace	Colombia	Colombia	2.32	-76.4	4650	Stratovolcano	Historical	D1	2	T	17	1									17	1								
+1949	6				Camiguin	Mindanao-Philippines	Philippines	9.203	124.673	1332	Stratovolcano	Historical	D2	3	P	2	1									2	1								
 1950	8	28			Semeru	Java	Indonesia	-8.108	112.92	3676	Stratovolcano	Historical	D1	1	P	6	1									6	1								
+1950	9	15			Camiguin	Mindanao-Philippines	Philippines	9.203	124.673	1332	Stratovolcano	Historical	D2	3	P	68	2									68	2								
 1950	9	23			Asama	Honshu-Japan	Japan	36.4	138.53	2560	Complex volcano	Historical	D1	2	T	1	1			1	1				1	1	1			1	1				1
 1951	1	15			Lamington	New Guinea	Papua New Guinea	-8.95	148.15	1680	Stratovolcano	Historical	D2	4	P	2942	4				2					2942	4				2				
 1951	8	3	TSU	EQ	Cosiguina	Nicaragua	Nicaragua	12.98	-87.57	872	Stratovolcano	Historical	D3													1000	3						3		
 1951	8	31			Kelut	Java	Indonesia	-7.93	112.308	1731	Stratovolcano	Historical	D1	3		7	1									7	1								
+1951	11	5			Hakone	Honshu-Japan	Japan	35.22	139.02	1438	Complex volcano	Radiocarbon	D7		G	2	1									2	1								
+1951	12	4			Camiguin	Mindanao-Philippines	Philippines	9.203	124.673	1332	Stratovolcano	Historical	D2	3	P	500	3	1500	4							500	3	1500	4						
 1951			TSU		Kavachi	Solomon Is-SW Pacifi	Solomon Is.	-9.02	157.95	-20	Submarine volcano	Historical	D1	2																					
+1952	3	27			Hakone	Honshu-Japan	Japan	35.22	139.02	1438	Complex volcano	Radiocarbon	D7		G	1	1									1	1								
 1952	9	16	TSU		Myojun Knoll	Izu Is-Japan	Japan	32.1	139.85	360	Submarine volcano	Holocene	Unknown	2																					
 1952	9	23	TSU		Myojun Knoll	Izu Is-Japan	Japan	32.1	139.85	360	Submarine volcano	Holocene	Unknown	2																					
 1952	9	24	TSU		Myojun Knoll	Izu Is-Japan	Japan	32.1	139.85	360	Submarine volcano	Holocene	Unknown	2	P	31	1						1			31	1						1		
@@ -475,21 +489,25 @@ Year	Month	Day	TSU	EQ	Name	Location	Country	Latitude	Longitude	Elevation	Type	St
 1953	4	27			Aso	Kyushu-Japan	Japan	32.88	131.1	1592	Caldera	Historical	D1	2	T	6	1									6	1								
 1953	6	27	TSU		St. Andrew Strait	Admiralty Is-SW Paci	Papua New Guinea	-2.38	147.35	270	Complex volcano	Historical	D2	0																			1		
 1953	6				Sirung	Lesser Sunda Is	Indonesia	-8.51	124.148	862	Complex volcano	Historical	D1	0		5	1			1	1					5	1			1	1				
+1953	7	26			Hakone	Honshu-Japan	Japan	35.22	139.02	1438	Complex volcano	Radiocarbon	D7		A	10	1									10	1								
 1953	10	5			Oshima	Izu Is-Japan	Japan	34.73	139.38	758	Stratovolcano	Historical	D1	1		1	1									1	1								
 1953	12	24			Ruapehu	New Zealand	New Zealand	-39.28	175.57	2797	Stratovolcano	Historical	D1		m	151	3									151	3								
 1954	2		TSU		Stromboli	Italy	Italy	38.789	15.213	926	Stratovolcano	Historical	D1																						
+1954	7	21			Tate-yama	Honshu-Japan	Japan	36.57	137.6	2621	Stratovolcano	Historical	D3		G	1	1									1	1								
 1954	8	3			Bam	New Guinea-NE of	Papua New Guinea	-3.6	144.85	685	Stratovolcano	Historical	D2	2	I	25	1				2					25	1				2				
-1954					Hibok-Hibok	Mindanao-Philippines	Philippines	9.203	124.673	1332	Stratovolcano	Historical	D2		m	2	1									2	1								
+1954					Camiguin	Mindanao-Philippines	Philippines	9.203	124.673	1332	Stratovolcano	Historical	D2		m	2	1									2	1								
 1955	7	26			Carran-Los Venados	Chile-C	Chile	-40.35	-72.07	1114	Pyroclastic cone	Historical	D1	4	G	2	1									2	1								
 1955	10	13			Sakura-jima	Kyushu-Japan	Japan	31.58	130.67	1117	Stratovolcano	Historical	D1	3			1										1								
 1956	3	30	TSU		Bezymianny	Kamchatka	Russia	55.978	160.587	2882	Stratovolcano	Historical	D1	5																					
 1957	3	11		EQ	Vsevidof	Aleutian Is	United States	53.13	-168.68	2149	Stratovolcano	Historical	D3	2																					
+1957	7				Unzen	Kyushu-Japan	Japan	32.75	130.3	1500	Complex volcano	Historical	D1		m	13	1									13	1								
 1957	8				Oshima	Izu Is-Japan	Japan	34.73	139.38	758	Stratovolcano	Historical	D1	2	T	1	1			53	2					1	1			53	2				
 1957	10				Aso	Kyushu-Japan	Japan	32.88	131.1	1592	Caldera	Historical	D1	2	T	12	1									12	1								
 1958	7	12			Mahawu	Sulawesi-Indonesia	Indonesia	1.358	124.858	1324	Stratovolcano	Historical	D1	2	M	1	1			10	1					1	1			10	1				
 1958	10	7	TSU		Kuwae	Vanuatu-SW Pacific	Vanuatu	-16.829	168.536	-2	Caldera	Historical	D1	2																					
 1960	5	25	TSU	EQ	Puyehue	Chile-C	Chile	-40.59	-72.117	2236	Stratovolcano	Holocene	U	3																					
 1961	1	25			Calbuco	Chile-S	Chile	-41.326	-72.614	2003	Stratovolcano	Historical	D2	3									1												
+1961	4	23			Tate-yama	Honshu-Japan	Japan	36.57	137.6	2621	Stratovolcano	Historical	D3		G	1	1									1	1								
 1961	5	8			Merapi	Java	Indonesia	-7.542	110.442	2947	Stratovolcano	Historical	D1	3	P	6	1			6	1		2		3	6	1			6	1		2		3
 1961	8	18			Asama	Honshu-Japan	Japan	36.4	138.53	2560	Complex volcano	Historical	D1	2	T	1	1									1	1								
 1962	6	29			Tokachi	Hokkaido-Japan	Japan	43.42	142.68	2077	Stratovolcano	Historical	D1	3	T	5	1			11	1					5	1			11	1				
@@ -518,6 +536,7 @@ Year	Month	Day	TSU	EQ	Name	Location	Country	Latitude	Longitude	Elevation	Type	St
 1969	1	7			Merapi	Java	Indonesia	-7.542	110.442	2947	Stratovolcano	Historical	D1	2	P	3	1									3	1								
 1969	1	28			Iya	Lesser Sunda Is	Indonesia	-8.88	121.63	637	Stratovolcano	Historical	D1	3	T,m	2	1			10	1			287	2	2	1			10	1			287	2
 1969	3	21	TSU		Didicas	Luzon-N of	Philippines	19.077	122.202	244	Compound volcano	Historical	D1	2	W											3	1								
+1969	8	26			Narugo	Honshu-Japan	Japan	38.73	140.73	462	Caldera	Historical	D6		G	1	1									1	1								
 1970	3	2			Campi Flegrei	Italy	Italy	40.827	14.139	458	Caldera	Historical	D5		S	3	1						1		1	3	1						1		1
 1970	5	5			Hekla	Iceland-S	Iceland	63.98	-19.7	1491	Stratovolcano	Historical	D1	3									1										1		
 1971	8	12			Hudson, Cerro	Chile-S	Chile	-45.9	-72.97	1905	Stratovolcano	Historical	D1	3	M	5	1									3	1								
@@ -525,7 +544,9 @@ Year	Month	Day	TSU	EQ	Name	Location	Country	Latitude	Longitude	Elevation	Type	St
 1971	9	14			Fuego	Guatemala	Guatemala	14.473	-90.88	3763	Stratovolcano	Historical	D1	3	M,T	10	1									10	1								
 1971	10	26			La Palma	Canary Is	Spain	28.58	-17.83	2426	Stratovolcano	Historical	D1	2			1						1				1						1		
 1971	10	29			Villarrica	Chile-C	Chile	-39.42	-71.93	2847	Stratovolcano	Historical	D1	2	M	15	1									15	1								
+1971	12	27			Kusatsu-Shirane	Honshu-Japan	Japan	36.62	138.55	2176	Stratovolcano	Historical	D1		G	6	1									6	1								
 1972	6	9			Fournaise, Piton de la	Indian O-W	Reunion	-21.229	55.713	2631	Shield volcano	Historical	D1	2	I	3	1									3	1								
+1972	10	2			Hakone	Honshu-Japan	Japan	35.22	139.02	1438	Complex volcano	Radiocarbon	D7			2	1									2	1								
 1972	10	9	TSU		Ritter Island	New Guinea-NE of	Papua New Guinea	-5.52	148.121	140	Stratovolcano	Historical	D1	1																					
 1973	1	27			Vestmannaeyjar	Iceland-S	Iceland	63.43	-20.28	279	Submarine volcano	Historical	D1	3	G	1	1									1	1								
 1973	1				Paluweh	Lesser Sunda Is	Indonesia	-8.32	121.708	875	Stratovolcano	Historical	D1	3									1		1								1		1
@@ -541,6 +562,7 @@ Year	Month	Day	TSU	EQ	Name	Location	Country	Latitude	Longitude	Elevation	Type	St
 1975	1				Marapi	Sumatra	Indonesia	-.381	100.473	2891	Complex volcano	Historical	D1	2	M	80	2						3		3	80	2						3		3
 1975	6	17			Arenal	Costa Rica	Costa Rica	10.463	-84.703	1657	Stratovolcano	Historical	D1	3		2	1				1					2	1				1				
 1975	11	29	TSU	EQ	Kilauea	Hawaiian Is	United States	19.425	-155.292	1222	Shield volcano	Historical	D1	0	W											2	1				1	4	2		
+1976	8	3			Kusatsu-Shirane	Honshu-Japan	Japan	36.62	138.55	2176	Stratovolcano	Historical	D1		G	3	1									3	1								
 1976	8	12			Sangay	Ecuador	Ecuador	-2.03	-78.33	5230	Stratovolcano	Historical	D1	3	T	2	1			4	1					2	1			4	1				
 1976	8	31			Semeru	Java	Indonesia	-8.108	112.92	3676	Stratovolcano	Historical	D1	2	M	119	3									119	3								
 1976	9	15			Karangetang [Api Siau]	Sangihe Is-Indonesia	Indonesia	2.78	125.48	1784	Stratovolcano	Historical	D1	2	P	1	1			1	1			24	1	1	1			1	1			24	1
@@ -558,6 +580,7 @@ Year	Month	Day	TSU	EQ	Name	Location	Country	Latitude	Longitude	Elevation	Type	St
 1979	3	8			Karkar	New Guinea-NE of	Papua New Guinea	-4.649	145.964	1839	Stratovolcano	Historical	D1	2	P	2	1									2	1								
 1979	7	5			Etna	Italy	Italy	37.734	15.004	3350	Stratovolcano	Historical	D1	2	T	9	1			23	1					9	1			23	1				
 1979	9	6			Aso	Kyushu-Japan	Japan	32.88	131.1	1592	Caldera	Historical	D1	2	T	3	1			11	1					3	1			11	1				
+1979					Iliwerung	Lesser Sunda Is	Indonesia	-8.54	123.59	1018	Complex volcano	Historical	D1	0												1239	4			32	1		3		3
 1980	5	18	TSU	EQ	St. Helens	US-Washington	United States	46.2	-122.18	2549	Stratovolcano	Historical	D1	5	P,M,T	57	2					2000	4			57	2					2000	4		
 1980	8	17			Hekla	Iceland-S	Iceland	63.98	-19.7	1491	Stratovolcano	Historical	D1	3									1										1		
 1981	3	17			Etna	Italy	Italy	37.734	15.004	3350	Stratovolcano	Historical	D1	2								10	3												
@@ -576,6 +599,7 @@ Year	Month	Day	TSU	EQ	Name	Location	Country	Latitude	Longitude	Elevation	Type	St
 1983	10	3		EQ	Miyake-jima	Izu Is-Japan	Japan	34.08	139.53	815	Stratovolcano	Historical	D1	3									1										2		
 1984	8	15			Oku Volc Field	Africa-W	Cameroon	6.25	10.5	3011	Maar	Radiocarbon	D5		G	37	1									37	1								
 1984	9	9			Mayon	Luzon-Philippines	Philippines	13.257	123.685	2462	Stratovolcano	Historical	D1	3	M	1	1									1	1								
+1984	9	14			On-take	Honshu-Japan	Japan	35.9	137.48	3063	Complex volcano	Historical	D1		A	29	1									29	1								
 1984	10	16			Etna	Italy	Italy	37.734	15.004	3350	Stratovolcano	Historical	D1	3	S	1	1									1	1								
 1985	5	10			Semeru	Java	Indonesia	-8.108	112.92	3676	Stratovolcano	Historical	D1	3	A	70	2									70	2								
 1985	11	13			Ruiz	Colombia	Colombia	4.895	-75.322	5321	Stratovolcano	Historical	D1	3	M	23080	4			10000	4					23080	4			10000	4				
@@ -591,39 +615,54 @@ Year	Month	Day	TSU	EQ	Name	Location	Country	Latitude	Longitude	Elevation	Type	St
 1988	7	6			Arenal	Costa Rica	Costa Rica	10.463	-84.703	1657	Stratovolcano	Historical	D1	3	T	1	1									1	1								
 1988	7	30			Semeru	Java	Indonesia	-8.108	112.92	3676	Stratovolcano	Historical	D1	3	T	1	1									1	1								
 1988	12	25			Lonquimay	Chile-C	Chile	-38.377	-71.58	2865	Stratovolcano	Historical	D1	3	T	1	1									1	1								
+1989	2	12			Aso	Kyushu-Japan	Japan	32.88	131.1	1592	Caldera	Historical	D1		G	1	1									1	1								
+1989	8	26			Kirishima	Kyushu-Japan	Japan	31.93	130.87	1700	Shield volcano	Historical	D1		G	2	1									2	1								
 1990	2	2			Shiveluch	Kamchatka	Russia	56.653	161.36	3283	Stratovolcano	Historical	D1	3									1										1		
 1990	2	10			Kelut	Java	Indonesia	-7.93	112.308	1731	Stratovolcano	Historical	D1	4	T,P	32	1									32	1								
+1990	3	26			Aso	Kyushu-Japan	Japan	32.88	131.1	1592	Caldera	Historical	D1	2	G	1	1									1	1								
+1990	4	18			Aso	Kyushu-Japan	Japan	32.88	131.1	1592	Caldera	Historical	D1	2	G	1	1									1	1								
 1990	5	29			Sabancaya	Peru	Peru	-15.78	-71.85	5967	Stratovolcano	Historical	D1	3									1										1		
 1990	6	24			Rabaul	New Britain-SW Pac	Papua New Guinea	-4.271	152.203	688	Pyroclastic shield	Historical	D1		G	6	1									6	1								
 1990	7	19			Santa Maria	Guatemala	Guatemala	14.756	-91.552	3772	Stratovolcano	Historical	D1	3	T	4	1									4	1								
-1990	11	17			Unzen	Kyushu-Japan	Japan	32.75	130.3	1500	Complex volcano	Historical	D1	1	P	43	1									43	1								
+1990	10	19			Aso	Kyushu-Japan	Japan	32.88	131.1	1592	Caldera	Historical	D1	2	G	1	1									1	1								
 1990	11	21			Nyiragongo	Africa-C	Congo, DRC	-1.52	29.25	3470	Stratovolcano	Historical	D1		S	1	1									1	1								
 1990	11	25			Kelut	Java	Indonesia	-7.93	112.308	1731	Stratovolcano	Historical	D1		m	4	1									4	1								
-1991	6	15		EQ	Pinatubo	Luzon-Philippines	Philippines	15.13	120.35	1486	Stratovolcano	Historical	D1	6	P,m,I	450	3			4	1		3			450	3			4	1		3		
+1991	6	3			Unzen	Kyushu-Japan	Japan	32.75	130.3	1500	Complex volcano	Historical	D1	1	P	43	1									43	1								
+1991	6	15		EQ	Pinatubo	Luzon-Philippines	Philippines	15.13	120.35	1486	Stratovolcano	Historical	D1	6	P,m,I	450	3			4	1		3			800	3			4	1		3		
 1991	7	3			Karthala	Indian O-W	Comoros	-11.75	43.38	2361	Shield volcano	Historical	D1	2									1										1		
 1991	8	8			Hudson, Cerro	Chile-S	Chile	-45.9	-72.97	1905	Stratovolcano	Historical	D1	5									1										1		
 1991	10	24			Lokon-Empung	Sulawesi-Indonesia	Indonesia	1.358	124.792	1580	Stratovolcano	Historical	D1	1	T,P	1	1									1	1								
 1991	12	14			Etna	Italy	Italy	37.734	15.004	3350	Stratovolcano	Historical	D1	2								2.5	2									2.5	2		
+1992	1	21			Karangetang [Api Siau]	Sangihe Is-Indonesia	Indonesia	2.78	125.48	1784	Stratovolcano	Historical	D1	2	M	2	1									2	1								
 1992	3	18			Dieng Volc Complex	Java	Indonesia	-7.2	109.92	2565	Complex volcano	Historical	D1		G	1	1			2	1					1	1			2	1				
 1992	4	13			Negro, Cerro	Nicaragua	Nicaragua	12.506	-86.702	728	Cinder cone	Historical	D1	3	I	2	1									2	1								
-1992	5	11			Karangetang [Api Siau]	Sangihe Is-Indonesia	Indonesia	2.78	125.48	1784	Stratovolcano	Historical	D1	1	P	6	1									6	1								
+1992	5	11			Karangetang [Api Siau]	Sangihe Is-Indonesia	Indonesia	2.78	125.48	1784	Stratovolcano	Historical	D1	1	P	6	1			1	1					6	1			1	1				
 1992	7	5			Marapi	Sumatra	Indonesia	-.381	100.473	2891	Complex volcano	Historical	D1	2	T	1	1			5	1					1	1			5	1				
 1992	7	12			Pinatubo	Luzon-Philippines	Philippines	15.13	120.35	1486	Stratovolcano	Historical	D1	1	m	6	1									6	1								
 1992	9	17			Spurr	Alaska-SW	United States	61.3	-152.25	3374	Stratovolcano	Historical	D1	3								2	2									2	2		
 1992					Semeru	Java	Indonesia	-8.108	112.92	3676	Stratovolcano	Historical	D1	3	T	3	1									3	1								
 1993	1	14			Galeras	Colombia	Colombia	1.22	-77.37	4276	Complex volcano	Historical	D1	2	T	9	1									9	1								
+1993	1	21			Wurlali	Banda Sea	Indonesia	-7.125	128.675	868	Stratovolcano	Historical	D3		m	1	1			12	1					1	1			12	1				
 1993	2	2			Mayon	Luzon-Philippines	Philippines	13.257	123.685	2462	Stratovolcano	Historical	D1	2	P	75	2									75	2								
 1993	4	19			Kilauea	Hawaiian Is	United States	19.425	-155.292	1222	Shield volcano	Historical	D1	0	A	1	1			22	1					1	1			22	1				
 1993	6	13			Krakatau	Indonesia	Indonesia	-6.102	105.423	813	Caldera	Historical	D1	1	T	1	1			5	1					1	1			5	1				
 1993	6	23			Unzen	Kyushu-Japan	Japan	32.75	130.3	1500	Complex volcano	Historical	D1	1	P	1	1								1	1	1								1
+1993	6	26			Pinatubo	Luzon-Philippines	Philippines	15.13	120.35	1486	Stratovolcano	Historical	D1	1	m	4	1									4	1								
+1993	10	4			Pinatubo	Luzon-Philippines	Philippines	15.13	120.35	1486	Stratovolcano	Historical	D1		m	14	1									14	1								
 1994	1	15			Yasur	Vanuatu-SW Pacific	Vanuatu	-19.52	169.425	361	Stratovolcano	Historical	D1	3	T	1	1									1	1								
 1994	2	3			Semeru	Java	Indonesia	-8.108	112.92	3676	Stratovolcano	Historical	D1	3	P	6	1									6	1								
+1994	5	29			Aso	Kyushu-Japan	Japan	32.88	131.1	1592	Caldera	Historical	D1	1	G	1	1									1	1								
 1994	9	19	TSU		Rabaul	New Britain-SW Pac	Papua New Guinea	-4.271	152.203	688	Pyroclastic shield	Historical	D1	3	T	4	1					35	4												
+1994	11	3			Rinjani	Lesser Sunda Is	Indonesia	-8.42	116.47	3726	Stratovolcano	Historical	D1	3	m	31	1									31	1								
 1994	11	22			Merapi	Java	Indonesia	-7.542	110.442	2947	Stratovolcano	Historical	D1	3		60	2									60	2								
 1995	2	4			Yasur	Vanuatu-SW Pacific	Vanuatu	-19.52	169.425	361	Stratovolcano	Historical	D1	3	T	2	1									2	1								
+1995	2	11			Yake-dake	Honshu-Japan	Japan	36.22	137.58	2455	Stratovolcano	Historical	D1	1	T	4	1									4	1								
 1995	4	2			Fogo	Cape Verde Is	Cape Verde	14.95	-24.35	2829	Stratovolcano	Historical	D1	2						20	1		1	10	1					20	1		1	10	1
+1995	5	15			Kelimutu	Lesser Sunda Is	Indonesia	-8.758	121.83	1640	Complex volcano	Historical	D1			1	1									1	1								
+1995	9	6			Parker	Mindanao-Philippines	Philippines	6.12	124.892	1824	Stratovolcano	Historical	D5			60	2							300	3	60	2							300	3
 1996	1	2	TSU		Karymsky	Kamchatka	Russia	54.05	159.43	1536	Stratovolcano	Historical	D1	2																					
 1996	4	30			Popocatepetl	Mexico	Mexico	19.023	-98.622	5426	Stratovolcano	Historical	D1	3		5	1						1			5	1						1		
+1996	8	10			Kanlaon	Philippines-C	Philippines	10.412	123.132	2435	Stratovolcano	Historical	D1	2	T	3	1			18	1					3	1			18	1				
 1996	9	30			Grimsvotn	Iceland-NE	Iceland	64.42	-17.33	1725	Caldera	Historical	D1	3									1										1		
 1996	12	3			Manam	New Guinea-NE of	Papua New Guinea	-4.1	145.061	1807	Stratovolcano	Historical	D1	3	P	13	1			29	1					13	1			29	1				
 1997	1	14			Merapi	Java	Indonesia	-7.542	110.442	2947	Stratovolcano	Historical	D1	2		6	1				1					6	1				1				
@@ -631,6 +670,8 @@ Year	Month	Day	TSU	EQ	Name	Location	Country	Latitude	Longitude	Elevation	Type	St
 1997	6	25			Soufriere Hills	W Indies	Montserrat	16.72	-62.18	915	Stratovolcano	Historical	D1	3	P	22	1	1								22	1								
 1997	8	1			Soufriere Hills	W Indies	Montserrat	16.72	-62.18	915	Stratovolcano	Historical	D1	3		2	1									2	1								
 1997	9	2			Semeru	Java	Indonesia	-8.108	112.92	3676	Stratovolcano	Historical	D1	3	T	2	1									2	1								
+1997	9	15			Adatara	Honshu-Japan	Japan	37.62	140.28	1718	Stratovolcano	Historical	D1		G	4	1									4	1								
+1997	11	23			Aso	Kyushu-Japan	Japan	32.88	131.1	1592	Caldera	Historical	D1		G	2	1									2	1								
 1997	12	26	TSU		Soufriere Hills	W Indies	Montserrat	16.72	-62.18	915	Stratovolcano	Historical	D1																						
 1998	4	28			Kilauea	Hawaiian Is	United States	19.425	-155.292	1222	Shield volcano	Historical	D1		L	1	1																		
 1998	7				Kelut	Java	Indonesia	-7.93	112.308	1731	Stratovolcano	Historical	D1		m	10	1									10	1								
@@ -651,6 +692,7 @@ Year	Month	Day	TSU	EQ	Name	Location	Country	Latitude	Longitude	Elevation	Type	St
 2002	12	30	TSU		Stromboli	Italy	Italy	38.789	15.213	926	Stratovolcano	Historical	D1								1		1		1						1		1		1
 2002					Semeru	Java	Indonesia	-8.108	112.92	3676	Stratovolcano	Historical	D1	3	T	3	1									3	1								
 2003	7	12	TSU		Soufriere Hills	W Indies	Montserrat	16.72	-62.18	915	Stratovolcano	Historical	D1	3																					
+2004	1	29			Egon	Lesser Sunda Is	Indonesia	-8.67	122.45	1703	Stratovolcano	Historical	D2	1	T	1	1									1	1								
 2004	6	8			Tengger Caldera	Java	Indonesia	-7.942	112.95	2329	Stratovolcano	Historical	D1	2	T	2	1			5	1														
 2004	10	24			Manam	New Guinea-NE of	Papua New Guinea	-4.1	145.061	1807	Stratovolcano	Historical	D1	4	T	5	1									5	1								
 2005	1	27			Manam	New Guinea-NE of	Papua New Guinea	-4.1	145.061	1807	Stratovolcano	Historical	D1	4	T	1	1			14	1					1	1			14	1				
