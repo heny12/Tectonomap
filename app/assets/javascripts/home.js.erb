@@ -130,39 +130,32 @@ $(document).ready(function() {
 // Date Slider
 ///////////////////////////////////////////////////////////////////////////////////////////////////
 
-// TODO change to this: http://ionden.com/a/plugins/ion.rangeSlider/demo_interactions.html
-
-$("#slider").dateRangeSlider({
-
-  bounds:{
-    min: DATE_LO,
-    max: DATE_HI
-  },
-  defaultValues:{
-    min: DATE_LO,
-    max: DATE_HI
-  },
-  arrows: false,
-  formatter: function(val){
-    var days = val.getDate(),
-    month = val.getMonth() + 1,
-    year = val.getFullYear();
-    return year;                    // TODO maybe show full date
-  },
-  step: {years:1},
-  wheelMode: false
+var slider = $("#slider").ionRangeSlider({
+    type: "double",
+    min: -5000,
+    max: 2500,
+    from_min: DATE_LO.getFullYear(),
+    from_max: DATE_HI.getFullYear(),
+    to_min: DATE_LO.getFullYear(),
+    to_max: DATE_HI.getFullYear(),
+    grid: true,
+    force_edges: true,
+    grid_num: 30,
+    keyboard: true,
+    keyboard_step: 0.013333,
+    prettify_separator: '',
+    values_separator: ' to ',
+    onChange: updateMap
 });
 
-$("#slider").bind("valuesChanging", function(e, data){
-  DATE_LO = data.values.min;
-  DATE_HI = data.values.max;
-  clearTimeout(TIMEOUT);
-  TIMEOUT = setTimeout(function(){adjustMarkers()}, 1500);
-});
+function updateMap() {
+    var year_lo = parseInt($(".irs-from").html());
+    var year_high = parseInt($(".irs-to").html());
+    clearTimeout(TIMEOUT);
+    TIMEOUT = setTimeout(function(){adjustMarkers(year_lo,year_high)}, 1500);
+}
 
-function adjustMarkers(){
-  var year_lo = DATE_LO.getFullYear();
-  var year_hi = DATE_HI.getFullYear();
+function adjustMarkers(year_lo,year_hi){
   adjustEruptions(year_lo,year_hi);
   adjustEarthquakes(year_lo,year_hi);
 }

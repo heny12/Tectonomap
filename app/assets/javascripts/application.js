@@ -18,5 +18,4 @@
 //= require google-maps.js
 //= require turbolinks
 //= require ion.rangeSlider.js
-//= require JQDateRangeSlider.min
 //= require_tree .
