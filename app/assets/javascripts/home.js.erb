@@ -15,7 +15,7 @@ $(document).ready(function() {
     center: {lat: 47.540, lng: -120.546},
     mapTypeId: google.maps.MapTypeId.HYBRID,
     disableDefaultUI: true,  // dont display the google map ui things, they just get in the way
-    zoom: 6
+    zoom: 3
   });
 
   var infowindow = new google.maps.InfoWindow({});
@@ -119,7 +119,7 @@ $(document).ready(function() {
   // Add our KML boundaries
   var kmzLayer = new google.maps.KmlLayer({
     // this layer is probably meant for google earth and displays wierd horizontal bars, TODO - fix or find better layer
-    url: 'plate-boundaries.kmz',
+    url: 'http://earthquake.usgs.gov/learn/plate-boundaries.kmz',
     map: map,
     preserveViewport: false,
     suppressInfoWindows: false

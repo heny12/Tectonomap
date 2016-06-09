@@ -39,6 +39,6 @@
 
 
 /* hide google stuff */
-.gm-style-cc, .gm-style img { 
+.gm-style-cc, #map > div > div:nth-child(2) > a > div > img { 
   display:none; 
 }
