@@ -2,9 +2,39 @@ $(document).ready(function() {
 
   var EARTHQUAKES = [];
   var ERUPTIONS = [];
+  var SHOW_EQ_MARKERS = false;
+  var SHOW_ER_MARKERS = false;
+  var SHOW_EQ_HEATMAP = false;
+  var SHOW_ER_HEATMAP = false;
   var DATE_HI = new Date();
   var DATE_LO = new Date(-4500,0,1);
   var TIMEOUT;
+
+
+  // variables for determing eruption radius //////////////////////////////////////////////////// 
+  // position will be between 0 and 100
+  var er_minp = 0;
+  var er_maxp = 8;
+
+  // The result should be between 100 an 10000000
+  var er_minv = Math.log(25000);
+  var er_maxv = Math.log(1500000);
+
+  // calculate adjustment factor
+  var er_scale = (er_maxv-er_minv) / (er_maxp-er_minp);
+
+  // variables for determing earthquake radius //////////////////////////////////////////////////// 
+  // position will be between 0 and 100
+  var eq_minp = 0;
+  var eq_maxp = 10;
+
+  // The result should be between 100 an 10000000
+  var eq_minv = Math.log(5000);
+  var eq_maxv = Math.log(200000);
+
+  // calculate adjustment factor
+  var eq_scale = (eq_maxv-eq_minv) / (eq_maxp-eq_minp);
+
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////
 // Initialize map
@@ -15,13 +45,57 @@ $(document).ready(function() {
     center: {lat: 47.540, lng: -120.546},
     mapTypeId: google.maps.MapTypeId.HYBRID,
     disableDefaultUI: true,  // dont display the google map ui things, they just get in the way
-    zoom: 3
+    zoom: 2,
+    minZoom: 2,
   });
 
   var infowindow = new google.maps.InfoWindow({});
 
+  var heatmap = new google.maps.visualization.HeatmapLayer({
+    map: map,
+    dissipating: false,
+    radius: 3,
+    opacity: 0.7,
+    gradient: [
+      'rgba(193, 249, 101, 0)',
+      'rgba(201, 235, 88, 1)',
+      'rgba(208, 222, 76, 1)',
+      'rgba(209, 203, 64, 1)',
+      'rgba(196, 170, 54, 1)',
+      'rgba(182, 138, 44, 1)',
+      'rgba(169, 108, 35, 1)',
+      'rgba(156, 79, 27, 1)',
+      'rgba(143, 52, 20, 1)',
+      'rgba(129, 28, 14, 1)',
+      'rgba(116, 9, 10, 1)'
+    ]
+  });
+  
   draw_earthquakes(gon.earthquakes);
   draw_eruptions(gon.eruptions);
+  draw_heatmap(gon.earthquakes,gon.eruptions);
+
+///////////////////////////////////////////////////////////////////////////////////////////////////
+// Initialize Heatmap
+///////////////////////////////////////////////////////////////////////////////////////////////////
+
+  function draw_heatmap(earthquakes,eruptions){
+    heatmap.setData(getPoints(earthquakes,eruptions));
+  }
+  function getPoints(earthquakes,eruptions) {
+    var arr = []
+    if(SHOW_EQ_HEATMAP){
+      for(i in earthquakes){
+        arr.push(new google.maps.LatLng(gon.earthquakes[i].latitude, gon.earthquakes[i].longitude))
+      }
+    }
+    if(SHOW_ER_HEATMAP){
+      for(i in eruptions){
+        arr.push(new google.maps.LatLng(gon.eruptions[i].latitude, gon.eruptions[i].longitude))
+      }
+    }
+    return arr
+  }  
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////
 // Draw data points on to map
@@ -41,7 +115,8 @@ $(document).ready(function() {
       strokeOpacity: 0.7,
       strokeWeight: 0.4,
       fillColor: '#ff0000',
-      fillOpacity: 0.6,
+      fillOpacity: 0.4,
+      visible: SHOW_EQ_MARKERS,
       map: map,
       center: new google.maps.LatLng(earthquake.latitude, earthquake.longitude),
       radius: EarthquakeLogSlider(earthquake.eq_primary),
@@ -85,7 +160,8 @@ $(document).ready(function() {
       strokeOpacity: 0.7,
       strokeWeight: 0.5,
       fillColor: '#fdff14',
-      fillOpacity: 0.6,
+      fillOpacity: 0.4,
+      visible: SHOW_ER_MARKERS,
       map: map,
       center: new google.maps.LatLng(eruption.latitude, eruption.longitude),
       radius: EruptionLogSlider(eruption.vei),
@@ -122,7 +198,9 @@ $(document).ready(function() {
     url: 'http://earthquake.usgs.gov/learn/plate-boundaries.kmz',
     map: map,
     preserveViewport: false,
-    suppressInfoWindows: false
+    suppressInfoWindows: false,
+    screenOverlays: true,
+    zIndex: -999
   });
 
 
@@ -145,25 +223,36 @@ var slider = $("#slider").ionRangeSlider({
     keyboard_step: 0.013333,
     prettify_separator: '',
     values_separator: ' to ',
-    onChange: updateMap
+    onChange: slide
 });
 
-function updateMap() {
-    var year_lo = parseInt($(".irs-from").html());
-    var year_high = parseInt($(".irs-to").html());
+function slide() {
     clearTimeout(TIMEOUT);
-    TIMEOUT = setTimeout(function(){adjustMarkers(year_lo,year_high)}, 1500);
+    TIMEOUT = setTimeout(function(){adjustVisuals()}, 1500);
 }
 
-function adjustMarkers(year_lo,year_hi){
+function adjustVisuals(){
+  adjustMarkers();
+  adjustHeatmap();
+}
+
+function adjustMarkers(){
+  var year_lo = parseInt($(".irs-from").html());
+  var year_hi = parseInt($(".irs-to").html());
   adjustEruptions(year_lo,year_hi);
   adjustEarthquakes(year_lo,year_hi);
+}
+
+function adjustHeatmap(){
+  var year_lo = parseInt($(".irs-from").html());
+  var year_hi = parseInt($(".irs-to").html());
+  adjustHeatmapData(year_lo,year_hi);
 }
 
 function adjustEruptions(year_lo,year_hi){
   for(i in ERUPTIONS){
     eruption = ERUPTIONS[i];
-    if(year_lo > eruption.data.year || eruption.data.year > year_hi){
+    if(!(SHOW_ER_MARKERS) || year_lo > eruption.data.year || eruption.data.year > year_hi){
       eruption.setVisible(false);
     }else{
       eruption.setVisible(true);
@@ -174,7 +263,7 @@ function adjustEruptions(year_lo,year_hi){
 function adjustEarthquakes(year_lo,year_hi){
   for(i in EARTHQUAKES){
     earthquake = EARTHQUAKES[i];
-    if(year_lo > earthquake.data.year || earthquake.data.year > year_hi){
+    if( !(SHOW_EQ_MARKERS) || year_lo > earthquake.data.year || earthquake.data.year > year_hi){
       earthquake.setVisible(false);
     }else{
       earthquake.setVisible(true);
@@ -182,51 +271,65 @@ function adjustEarthquakes(year_lo,year_hi){
   }
 }
 
+function adjustHeatmapData(year_lo,year_hi){
+  var arr = [];
+  if(SHOW_EQ_HEATMAP){
+    for(i in gon.earthquakes){
+      if(!(year_lo > gon.earthquakes[i].year || gon.earthquakes[i].year > year_hi)){
+        arr.push(new google.maps.LatLng(gon.earthquakes[i].latitude, gon.earthquakes[i].longitude))
+      }
+    }
+  }
+  if(SHOW_ER_HEATMAP){
+    for(i in gon.eruptions){
+      if(!(year_lo > gon.eruptions[i].year || gon.eruptions[i].year > year_hi)){
+        arr.push(new google.maps.LatLng(gon.eruptions[i].latitude, gon.eruptions[i].longitude))
+      }
+    }    
+  }
+  heatmap.setData(arr);
+}
+
 ///////////////////////////////////////////////////////////////////////////////////////////////////
 // Helper functions
 ///////////////////////////////////////////////////////////////////////////////////////////////////
+
 
   function EruptionLogSlider(position) {
     if(position == null){
       position = 0;
     }
-
-    // position will be between 0 and 100
-    var minp = 0;
-    var maxp = 8;
-
-    // The result should be between 100 an 10000000
-    var minv = Math.log(5000);
-    var maxv = Math.log(400000);
-
-    // calculate adjustment factor
-    var scale = (maxv-minv) / (maxp-minp);
-
-    return Math.exp(minv + scale*(position-minp));
+    return Math.exp(er_minv + er_scale*(position-er_minp));
   }
 
   function EarthquakeLogSlider(position) {
     if(position == null){
       position = 0;
     }
-
-    // position will be between 0 and 100
-    var minp = 0;
-    var maxp = 13;
-
-    // The result should be between 100 an 10000000
-    var minv = Math.log(10000);
-    var maxv = Math.log(100000);
-
-    // calculate adjustment factor
-    var scale = (maxv-minv) / (maxp-minp);
-
-    return Math.exp(minv + scale*(position-minp));
+    return Math.exp(eq_minv + eq_scale*(position-eq_minp));
   }
 
+///////////////////////////////////////////////////////////////////////////////////////////////////
+// Button click functions
+///////////////////////////////////////////////////////////////////////////////////////////////////
 
 
+$('.heatmap-button').click(function(){
+    SHOW_ER_HEATMAP = $('#eruption-heatmap-button').is(':checked');
+    SHOW_EQ_HEATMAP = $('#earthquake-heatmap-button').is(':checked');
+    adjustHeatmap();
+});
 
+$('.marker-button').click(function(){
+    SHOW_ER_MARKERS = $('#eruption-marker-button').is(':checked');
+    SHOW_EQ_MARKERS = $('#earthquake-marker-button').is(':checked');
+    adjustMarkers();
+});
+
+
+///////////////////////////////////////////////////////////////////////////////////////////////////
+// Loading icon functions
+///////////////////////////////////////////////////////////////////////////////////////////////////
 
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////

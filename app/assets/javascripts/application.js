@@ -12,8 +12,6 @@
 //
 //= require jquery
 //= require jquery.min.js
-//= require jquery_ujs
-//= require jquery-ui
 //= require d3
 //= require google-maps.js
 //= require turbolinks
