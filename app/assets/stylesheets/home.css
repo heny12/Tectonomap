@@ -43,9 +43,9 @@
   display:none; 
 }
 
-#map img[src*='kml'] {
+/*#map img[src*='kml'] {
     opacity: .4;
-}
+}*/
 
 .toolbar {
   width: 150px;
@@ -60,7 +60,18 @@
   font-size: 9pt;
 }
 
-h3{
+#title {
+  position: absolute;
+  padding: 3px;
+  left: 10px;
+  top: 10px;
+  width: 120px;
+  height: 70px;
+  background-color: #ED5565;
+  color: white;
+}
+
+h2, h3 {
   margin: 0px;
   padding: 0px;
 }
@@ -68,4 +79,8 @@ h3{
 hr {
   margin-top: 3px;
   margin-bottom: 4px;
+}
+
+a {
+  color: white;
 }

@@ -42,10 +42,10 @@ $(document).ready(function() {
 
   var mapDiv = document.getElementById('map');
   var map = new google.maps.Map(mapDiv, {
-    center: {lat: 47.540, lng: -120.546},
+    center: {lat: 37.540, lng: -100.546},
     mapTypeId: google.maps.MapTypeId.HYBRID,
     disableDefaultUI: true,  // dont display the google map ui things, they just get in the way
-    zoom: 2,
+    zoom: 4,
     minZoom: 2,
   });
 
@@ -195,9 +195,9 @@ $(document).ready(function() {
   // Add our KML boundaries
   var kmzLayer = new google.maps.KmlLayer({
     // this layer is probably meant for google earth and displays wierd horizontal bars, TODO - fix or find better layer
-    url: 'http://earthquake.usgs.gov/learn/plate-boundaries.kmz',
+    url: 'http://henrydchipman.com/plates.kmz',
     map: map,
-    preserveViewport: false,
+    preserveViewport: true,
     suppressInfoWindows: false,
     screenOverlays: true,
     zIndex: -999
