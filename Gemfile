@@ -15,7 +15,8 @@ gem 'coffee-rails', '~> 4.1.0'
 # gem 'therubyracer', platforms: :ruby
 
 gem 'tzinfo-data'
-gem  'rails_12factor' # to enable all platform features
+gem 'railties'
+gem 'rails_12factor' # to enable all platform features
 
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
