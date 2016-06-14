@@ -84,3 +84,39 @@ hr {
 a {
   color: white;
 }
+
+input[type='number'] {
+  color: black;
+  width: 25px;
+  height: 10px;
+  font-size: 7pt;
+}
+
+#info_window {
+  position: absolute;
+  z-index: 9999;
+  width: 400px;
+  height: auto;
+  padding: 3px;
+  top:25%;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  background-color: #ED5565;
+  color: white;
+  font-size: 11pt;
+  display: none;
+} 
+
+#info_window .content {
+  padding: 5px;
+  margin: 0px;
+  text-align:justify;
+}
+
+#info_window #close {
+  float: right;
+  clear: both;
+  text-decoration: underline;
+  cursor: pointer; 
+}

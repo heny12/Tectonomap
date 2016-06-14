@@ -4,8 +4,8 @@ $(document).ready(function() {
   var ERUPTIONS = [];
   var SHOW_EQ_MARKERS = false;
   var SHOW_ER_MARKERS = false;
-  var SHOW_EQ_HEATMAP = false;
-  var SHOW_ER_HEATMAP = false;
+  var SHOW_EQ_HEATMAP = true;
+  var SHOW_ER_HEATMAP = true;
   var DATE_HI = new Date();
   var DATE_LO = new Date(-4500,0,1);
   var TIMEOUT;
@@ -29,7 +29,7 @@ $(document).ready(function() {
   var eq_maxp = 10;
 
   // The result should be between 100 an 10000000
-  var eq_minv = Math.log(5000);
+  var eq_minv = Math.log(14000);
   var eq_maxv = Math.log(200000);
 
   // calculate adjustment factor
@@ -120,7 +120,7 @@ $(document).ready(function() {
       map: map,
       center: new google.maps.LatLng(earthquake.latitude, earthquake.longitude),
       radius: EarthquakeLogSlider(earthquake.eq_primary),
-      data: {id:earthquake.id,year:earthquake.year}
+      data: {id:earthquake.id,year:earthquake.year,magnitude:earthquake.eq_primary}
     });
     // Adds a listener that will show an info window for the marker when clicked
     earthquakeCircle.addListener('click', function(event) {
@@ -165,7 +165,7 @@ $(document).ready(function() {
       map: map,
       center: new google.maps.LatLng(eruption.latitude, eruption.longitude),
       radius: EruptionLogSlider(eruption.vei),
-      data: {id:eruption.id,year:eruption.year}
+      data: {id:eruption.id,year:eruption.year,vei:eruption.vei}
     });
     // Adds a listener that will show an info window for the marker when clicked
     eruptionCircle.addListener('click', function(event) {
@@ -250,9 +250,11 @@ function adjustHeatmap(){
 }
 
 function adjustEruptions(year_lo,year_hi){
+  var vei_lo = parseInt($("#vei_lo").val());
+  var vei_hi = parseInt($("#vei_hi").val());
   for(i in ERUPTIONS){
     eruption = ERUPTIONS[i];
-    if(!(SHOW_ER_MARKERS) || year_lo > eruption.data.year || eruption.data.year > year_hi){
+    if(!(SHOW_ER_MARKERS) || year_lo > eruption.data.year || eruption.data.year > year_hi || vei_lo > eruption.data.vei || vei_hi < eruption.data.vei){
       eruption.setVisible(false);
     }else{
       eruption.setVisible(true);
@@ -261,9 +263,11 @@ function adjustEruptions(year_lo,year_hi){
 }
 
 function adjustEarthquakes(year_lo,year_hi){
+  var mag_lo = parseInt($("#mag_lo").val());
+  var mag_hi = parseInt($("#mag_hi").val());
   for(i in EARTHQUAKES){
     earthquake = EARTHQUAKES[i];
-    if( !(SHOW_EQ_MARKERS) || year_lo > earthquake.data.year || earthquake.data.year > year_hi){
+    if( !(SHOW_EQ_MARKERS) || year_lo > earthquake.data.year || earthquake.data.year > year_hi || mag_lo > earthquake.data.magnitude || mag_hi < earthquake.data.magnitude){
       earthquake.setVisible(false);
     }else{
       earthquake.setVisible(true);
@@ -271,18 +275,23 @@ function adjustEarthquakes(year_lo,year_hi){
   }
 }
 
+// include mag/vei filtering
 function adjustHeatmapData(year_lo,year_hi){
+  var mag_lo = parseInt($("#mag_lo").val());
+  var mag_hi = parseInt($("#mag_hi").val());
+  var vei_lo = parseInt($("#vei_lo").val());
+  var vei_hi = parseInt($("#vei_hi").val());
   var arr = [];
   if(SHOW_EQ_HEATMAP){
     for(i in gon.earthquakes){
-      if(!(year_lo > gon.earthquakes[i].year || gon.earthquakes[i].year > year_hi)){
+      if(!(year_lo > gon.earthquakes[i].year || gon.earthquakes[i].year > year_hi || gon.earthquakes[i].eq_primary > mag_hi || gon.earthquakes[i].eq_primary < mag_lo )){
         arr.push(new google.maps.LatLng(gon.earthquakes[i].latitude, gon.earthquakes[i].longitude))
       }
     }
   }
   if(SHOW_ER_HEATMAP){
     for(i in gon.eruptions){
-      if(!(year_lo > gon.eruptions[i].year || gon.eruptions[i].year > year_hi)){
+      if(!(year_lo > gon.eruptions[i].year || gon.eruptions[i].year > year_hi || gon.eruptions[i].vei > vei_hi || gon.eruptions[i].vei < vei_lo )){
         arr.push(new google.maps.LatLng(gon.eruptions[i].latitude, gon.eruptions[i].longitude))
       }
     }    
@@ -310,7 +319,7 @@ function adjustHeatmapData(year_lo,year_hi){
   }
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////
-// Button click functions
+// Button / input click functions
 ///////////////////////////////////////////////////////////////////////////////////////////////////
 
 
@@ -326,11 +335,15 @@ $('.marker-button').click(function(){
     adjustMarkers();
 });
 
+$("#mag_lo, #mag_hi, #vei_hi, #vei_lo").change(function(){
+    clearTimeout(TIMEOUT);
+    TIMEOUT = setTimeout(function(){adjustVisuals()}, 1500);
+})
 
-///////////////////////////////////////////////////////////////////////////////////////////////////
-// Loading icon functions
-///////////////////////////////////////////////////////////////////////////////////////////////////
 
+$(".about-toggle").click(function(){
+  $('#info_window').toggle();
+})
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////
 // Depricated for now

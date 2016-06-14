@@ -1,9 +1,9 @@
 <div id="title">
 	<h3>Tectonomap</h3>
 	<hr/>
-	<a href=''>About</a>
+	<a class="about-toggle" href='javascript:;'>About</a>
 	<br/>
-	<a href='https://github.com/heny12/tectonomap'>Github</a>
+	<a href='https://github.com/heny12/tectonomap' target='_blank'>Github</a>
 </div>
 
 <!-- container for google map -->
@@ -17,16 +17,29 @@
 	<hr/>
 	<input type="checkbox" class='marker-button' id="earthquake-marker-button">
 	<label>Markers</label>
-	<input type="checkbox" class='heatmap-button' id="earthquake-heatmap-button">
+	<input type="checkbox" class='heatmap-button' id="earthquake-heatmap-button" checked>
 	<label>Heatmap</label>
-	<label>Magnitude range: </label>
+	<label>Magnitudes: </label>
+	<input type="number" id="mag_lo" min="0" max="10" value="0" required>
+	<span>to</span>
+	<input type="number" id="mag_hi" min="0" max="10" value="10" required>
 </div>
 <div id="eruption_toolbar" class="toolbar">
 	<h3>Eruption Controls</h3>
 	<hr/>
 	<input type="checkbox" class='marker-button' id="eruption-marker-button">
 	<label>Markers</label>
-	<input type="checkbox" class='heatmap-button' id="eruption-heatmap-button">
+	<input type="checkbox" class='heatmap-button' id="eruption-heatmap-button" checked>
 	<label>Heatmap</label>
-	<label>VEI range: </label>
+	<label>VEIs: </label>
+	<input type="number" id="vei_lo" min="0" max="8" value="0" required>
+	<span>to</span>
+	<input type="number" id="vei_hi" min="0" max="8" value="8" required>
+</div>
+
+<div id="info_window">
+	<span class="about-toggle" id="close">X</span>
+	<div class='content'>
+		<p>Tectonomap is an interactive map of the world’s recorded significant earthquakes and volcanic eruptions. It is meant to be used as a tool for learning and exploring Earth’s recent geologic history. Tectonomap uses the NOAA Significant Volcanic Eruption Database and Significant Earthquake Database to pull its data. It uses the Google Maps Javascript api and visualization library for the map layers. For more information or to give feedback check out the Tectonomap gihub page or contact Henry at hdchipman@msn.com.</p>
+	</div>
 </div>
