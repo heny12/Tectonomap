@@ -237,6 +237,7 @@ function adjustVisuals(){
 }
 
 function adjustMarkers(){
+  showLoadingIcon();
   var year_lo = parseInt($(".irs-from").html());
   var year_hi = parseInt($(".irs-to").html());
   adjustEruptions(year_lo,year_hi);
@@ -344,6 +345,21 @@ $("#mag_lo, #mag_hi, #vei_hi, #vei_lo").change(function(){
 $(".about-toggle").click(function(){
   $('#info_window').toggle();
 })
+
+///////////////////////////////////////////////////////////////////////////////////////////////////
+// 
+///////////////////////////////////////////////////////////////////////////////////////////////////
+
+function showLoadingIcon(){
+  if((SHOW_EQ_MARKERS && SHOW_ER_MARKERS) || (!SHOW_ER_MARKERS && SHOW_EQ_MARKERS)){
+    $('.loading').show();
+    setTimeout(function(){$('.loading').hide();},3000);
+  }else if(SHOW_ER_MARKERS && !SHOW_EQ_MARKERS){
+    $('.loading').show();
+    setTimeout(function(){$('.loading').hide();},1000);
+  }else{
+  }
+}
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////
 // Depricated for now
