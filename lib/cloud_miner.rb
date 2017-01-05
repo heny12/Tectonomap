@@ -1,4 +1,5 @@
 require 'net/http'
+require 'open-uri'
 
 class CloudMiner; class << self
 
@@ -8,11 +9,13 @@ class CloudMiner; class << self
   end
 
   def mine_eruptions
-    url = URI.parse('http://www.ngdc.noaa.gov/nndc/struts/results?type_0=Exact&query_0=$HAZ_EVENT_ID&t=102557&s=50&d=54&dfn=volerup.txt')
-    req = Net::HTTP::Get.new(url.to_s)
-    resp = Net::HTTP.start(url.host, url.port) {|http|
-      http.request(req)
-    }
+    uri = URI('https://www.ngdc.noaa.gov/nndc/struts/results?type_0=Exact&query_0=$HAZ_EVENT_ID&t=102557&s=50&d=54&dfn=volerup.txt')
+    http = Net::HTTP.new(uri.host, uri.port)
+    http.use_ssl = true
+    http.verify_mode = OpenSSL::SSL::VERIFY_NONE
+    request = Net::HTTP::Get.new(uri.request_uri)
+    resp = http.request(request)
+
     open(Rails.root.join('data','eruption.tsv'), "wb") do |file|
         file.write(resp.body)
     end
@@ -20,11 +23,13 @@ class CloudMiner; class << self
   end
 
   def mine_earthquakes
-    url = URI.parse('http://www.ngdc.noaa.gov/nndc/struts/results?type_0=Exact&query_0=$ID&t=101650&s=13&d=189&dfn=signif.txt')
-    req = Net::HTTP::Get.new(url.to_s)
-    resp = Net::HTTP.start(url.host, url.port) {|http|
-      http.request(req)
-    }
+    uri = URI('https://www.ngdc.noaa.gov/nndc/struts/results?type_0=Exact&query_0=$ID&t=101650&s=13&d=189&dfn=signif.txt')
+    http = Net::HTTP.new(uri.host, uri.port)
+    http.use_ssl = true
+    http.verify_mode = OpenSSL::SSL::VERIFY_NONE
+    request = Net::HTTP::Get.new(uri.request_uri)
+    resp = http.request(request)
+
     open(Rails.root.join('data','earthquake.tsv'), "wb") do |file|
         file.write(resp.body)
     end
